@@ -127,7 +127,7 @@ font-family: "Lato", sans-serif;
     top: 0;
   }
   .carousel .vertical.next {
-    top:unset;
+    top: auto;
     bottom: 0;
   }
   
@@ -140,7 +140,7 @@ font-family: "Lato", sans-serif;
   }
   .carousel .indicators.horizontal-indicator {
     width: 100%;
-    top:unset;  
+    top: auto;  
     bottom: 0;
     z-index: 4;
   }
@@ -189,9 +189,10 @@ font-family: "Lato", sans-serif;
 display: flex;
 color: var(--theme-color);
 position: relative;
-box-shadow: 0 0 2px 0 grey;
+box-shadow: 0 2px 2px 0 rgb(177, 177, 177);
 padding: 0 20px;
-z-index: 10;
+z-index: 100;
+background-color: white;
 background-color: var(--theme-background-color);
 
 }
@@ -219,6 +220,8 @@ height: 70vh;
 max-height: 600px;
 min-width: 160px;
 box-shadow: 0px 0px 2px 0 grey;
+background-color: white;
+
 background-color: var(--theme-background-color);
 border-radius: 0 0 0 10px/ 0 0 0 10px;
 }
@@ -227,6 +230,7 @@ border-radius: 0 0 0 10px/ 0 0 0 10px;
 padding: 10px;
 }
 .dropdown-right {
+    background-color: white;
 background-color: var(--theme-background-color);
 
 display: none;
@@ -287,7 +291,10 @@ right: 5%;
 height: 70vh;
 width: 90%;
 box-shadow: 0px 0px 2px 0 grey;
+background-color: white;
+
 background-color: var(--theme-background-color);
+
 border-radius: 0 0 0 10px/ 0 0 0 10px;
 padding: 30px;
 flex-wrap: wrap;
@@ -308,6 +315,9 @@ box-sizing: border-box;
 display: flex;
 box-shadow: 0 0 2px 0 grey;
 align-items: center;
+background-color: white;
+position: relative;
+z-index: 100;
 font-size: 1em;
 
 }
@@ -402,6 +412,125 @@ display:none;
 
 }
 
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+.cards {
+  padding: 0 5px;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 10px;
+  margin: 0 auto;
+  justify-content: center;
+background-color: white;
+
+}
+.card {
+    margin: 10px;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 1px rgb(193, 193, 193);
+background-color: white;
+
+}
+.card .head {
+  display: flex;
+
+  padding: 15px;
+  border-bottom: 2px solid #efefef;
+background-color: white;
+
+}
+.card .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 200px;
+  height: 200px;
+}
+.card .details {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+.card .details {
+  border-top: 2px solid #efefef;
+  padding: 10px 20px;
+  display: flex;
+}
+.card .details .name {
+  font-size: 1.1rem;
+}
+.card .details .description {
+  font-size: 0.8rem;
+  color: grey;
+}
+.card .details .price {
+  font-size: 0.9rem;
+  color: green;
+  margin: 0 auto;
+}
+
+.heart {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #bbb3b3;
+  transform: rotate(45deg);
+  display: inline-block;
+}
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 100%;
+  transform: translate(-50%, 0px);
+}
+.heart::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 100%;
+  transform: translate(0px, -50%);
+}
+.heart:hover {
+  transform: rotate(45deg) scale(1.3);
+  background: red;
+}
+
+
+@media (max-width:700px) {
+    
+.card {
+    width: 100%;
+    
+    max-width: 400px;
+}
 
 }
 
@@ -800,7 +929,7 @@ display:none;
         <div class="item">Contact</div>
     </nav>
 
-    <div class="carousel" style="max-height:500px; height: 70vmin">
+    <div class="carousel" style="max-height:800px; height: 70vmin">
 
         <div class="slides">
             <div class="slide" style="transform:translateX(0%);">
@@ -808,14 +937,14 @@ display:none;
                     <img src="https://i.ytimg.com/vi/PlnyTPhII60/maxresdefault.jpg" alt="">
                 </div>
             </div>
-            <div class="slide" style="transform:translateX(100%)" >
-                <div class="image"style="background: #fff">
+            <div class="slide" style="transform:translateX(100%)">
+                <div class="image" style="background: #fff">
                     <img src="https://www.hikvision.com/ueditor/net/upload/2016-03-24/c7518925-e031-4f70-a248-5b468bbdc5dd.jpg"
                         alt="">
                 </div>
             </div>
-            <div class="slide" style="transform:translateX(200%)" >
-                <div class="image"style="background: #ededed">
+            <div class="slide" style="transform:translateX(200%)">
+                <div class="image" style="background: #ededed">
                     <img src="https://cdn.cultofmac.com/wp-content/uploads/2018/04/F92C73D3-3411-4EEF-B9B1-C0CC0055D853.jpeg"
                         alt="">
                 </div>
@@ -834,17 +963,195 @@ display:none;
 
         </div>
 
+    </div>
 
-        <script>
-            window.onload = () => {
-                const slides = document.querySelector('.slides');
-                let current = 0;
-                setInterval(() => {
-                    current = (current + 1) % 3;
-                    slides.style.transform = `translateX(-${current * 100}%)`;
-                }, 5000);
-            }
-        </script>
+    <div class="section">
+        <h2>Shoes</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://dsw.scene7.com/is/image/DSWShoes/377442_001_ss_01?$pdp-image$" alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shoes
+                        <div class="description">Wonderful Shoes</div>
+                    </div>
+
+                    <div class="price">RS 100000</div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="data:image/jpeg;base64,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3D2nBbmjqxp63QbVaGWOkRfTp+3jmGOnDfUPLFBINPa1WSyT11Zod9Adp+72GyRzMBRH/GmkLX/2/Rz3NOFWr7J5XtZ4PPJTXV3ou0dZYcafX1AZ260OvmZDI2QeMTxUzZTAuAAQcU/wLp21/wCZtgpNn2Wk3cC2mGDxcVtdF9CFladqvWq1TnBDGn7va/qXWUQRnROoWjrPBp2WltD3nN2n/fdJ81ImUWgQAAriICIiAiIgIiICIiCirSDhDgCOKjeltSrPWkiWnxCk6IOV6Q6KnH9nVb3iForT0U2zLq3fahdxReaNvn+p0V2/+Gz74WPU6KNI/wAJv3wvohE092+cHdEukv4LfvtVo9EWk/4LP/I1fSiJp4+bB0P6U+hSHOp+AVxnQ3pTM2cfbd/819HovR89UOhO3n2q9nbyDnfALa2PoJqfvLa0DcylB8S4+i7giDl1g6ErC39rWtFThtBg/oAPmpPozo50XQgtsdNxGDqk1D4vJUqRBbo0GsENa1oGAAAHgFcREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREH/9k="
+                        alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shoes
+                        <div class="description">Wonderful Shoes</div>
+                    </div>
+
+                    <div class="price">RS 1000</div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCRx-6bYrp7W5lk1BU3QZycuVzQEl8qzG2kZSQz0fAWZsqlxnb"
+                        alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shoes
+                        <div class="description">Wonderful Shoes</div>
+                    </div>
+
+                    <div class="price">RS 1000</div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://scene7.josbank.com/is/image/JosBank/24750_024_main?$browse_thumbnail$?$browse_thumbnail$"
+                        alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shoes
+                        <div class="description">Wonderful Shoes</div>
+                    </div>
+
+                    <div class="price">RS 1000</div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://media03.toms.com/static/www/images/product/MENS/ATG/SIDE/10011588-GreyLinenMensPreston-P-1450x1015.jpg"
+                        alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shoes
+                        <div class="description">Wonderful Shoes</div>
+                    </div>
+
+                    <div class="price">RS 1000</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="section">
+        <h2>Clothes</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://assets.academy.com/mgen/65/20082765.jpg?is=500,500" alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shirt
+                        <div class="description">Wonderful Shirt</div>
+                    </div>
+
+                    <div class="price">RS 100000</div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://d2ul0w83gls0j4.cloudfront.net/taxonomy/300/0108/20171024150159.jpg" alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shirt
+                        <div class="description">Wonderful Shirt</div>
+                    </div>
+
+                    <div class="price">RS 1000</div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://assets.academy.com/mgen/75/20083275.jpg?is=500,500" alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shirt
+                        <div class="description">Wonderful Shirt</div>
+                    </div>
+
+                    <div class="price">RS 1000</div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://secure.graysobjects.com/B2Bdata/CKT/2018/C/300px/CCDA18Top%20Hooded%20Pro%20Performance%20Navy%20Main.png "
+                        alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shirt
+                        <div class="description">Wonderful Shirt</div>
+                    </div>
+
+                    <div class="price">RS 1000</div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="heart" style="height:10px;width:10px;"></div>
+                </div>
+                <div class="image">
+                    <img src="https://www.rlmedia.io/is/image/PoloGSI/s7-CYO0002_lifestyle?$rl_392_pdp$" alt="">
+                </div>
+                <div class="details">
+                    <div class="name">Shirt
+                        <div class="description">Wonderful Shirt</div>
+                    </div>
+
+                    <div class="price">RS 1000</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var slides = document.querySelector('.slides');
+            var current = 0;
+            setInterval(function () {
+                current = (current + 1) % 3;
+                slides.style.transform = "translateX(-" + current * 100 + "%)";
+            }, 5000);
+        }
+    </script>
 </body>
 
 </html>

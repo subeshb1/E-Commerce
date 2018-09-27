@@ -111,7 +111,7 @@
     height: 100%;
     z-index: 4;
   }
-  .carousel .indicators.horizontal-indicator {
+  .carousel .horizontal-indicator.indicators {
     width: 100%;
     top:unset;  
     bottom: 0;
